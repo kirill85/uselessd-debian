@@ -1,0 +1,20 @@
+Source: uselessd
+Section: admin
+Priority: optional
+Maintainer: Kirill Shkrogalev <kirilshkrogalev@yandex.ru>
+Build-Depends: debhelper (>= 8.0.0), libdbus-1-dev (>=1.4.0), libcap-dev, 
+Standards-Version: 3.9.5
+Homepage: http://uselessd.darknedgy.net
+Vcs-Hg: https://bitbucket.org/bcsd/uselessd
+Vcs-Browser: https://bitbucket.org/bcsd/uselessd/src
+
+Package: uselessd
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>
+
+Package: uselessd-doc
+Architecture: all
+Description: documentation for uselessd
+ <insert long description, indented with spaces>
