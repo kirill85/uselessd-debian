@@ -1,8 +1,9 @@
 Source: uselessd
 Section: admin
-Priority: optional
+Priority: required
 Maintainer: Kirill Shkrogalev <kirilshkrogalev@yandex.ru>
-Build-Depends: debhelper (>= 8.0.0), libdbus-1-dev (>=1.4.0), libcap-dev, 
+Build-Depends: debhelper (>= 8.0.0), dh-autoreconf, libdbus-1-dev (>=1.4.0), libcap-dev
+Build-Depends-Indep: docbook-xsl, xlltproc, libtool, intltool, automake, gperf
 Standards-Version: 3.9.5
 Homepage: http://uselessd.darknedgy.net
 Vcs-Hg: https://bitbucket.org/bcsd/uselessd
@@ -11,10 +12,14 @@ Vcs-Browser: https://bitbucket.org/bcsd/uselessd/src
 Package: uselessd
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Replaces: systemd
+Recommends: util-linux, libkmod, libpam, cryptsetup, libaudit, libacl, libattr, libselinux, liblzma, tcpwrappers, libgcrypt, libqrencode, libmicrohttpd, libpython2.7
+Breaks: uselessd (<<8)
+Conflicts: systemd
+Description: Init system and the system daemon's manager.
+ Init system and the system daemon's manager.
 
 Package: uselessd-doc
 Architecture: all
 Description: documentation for uselessd
- <insert long description, indented with spaces>
+ documentation for uselessd
