@@ -16,6 +16,7 @@ Replaces: systemd
 Recommends: util-linux, libkmod, libpam, cryptsetup, libaudit, libacl, libattr, libselinux, liblzma, tcpwrappers, libgcrypt, libqrencode, libmicrohttpd, libpython2.7
 Breaks: uselessd (<<8)
 Conflicts: systemd
+Suggests: uselessd-logind, 
 Description: Init system and the system daemon's manager.
  Init system and the system daemon's manager.
 

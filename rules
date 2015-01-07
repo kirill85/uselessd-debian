@@ -10,3 +10,12 @@ export DH_OPTIONS=-v
 
 %:
 	dh $@ 
+
+override_dh_auto_configure:
+	dh_auto_configure -- --localstatedir=/var \
+		-- --sysconfigdir=/etc -- --libdir=/usr/lib \
+		-- --syslibdir=/lib -- --enable-split-usr
+
+override_dh_auto_test:
+	dh_auto_install
+	systemd --test --system
