@@ -1,1 +1,2 @@
-#DOCS#
+docs/sysvinit usr/share/doc/uselessd
+docs/html/man/*.html usr/share/doc/uselessd/html

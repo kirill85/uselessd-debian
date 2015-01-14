@@ -1,0 +1,14 @@
+systemctl usr/bin
+systemd-ac-power usr/bin
+systemd-analyze usr/bin
+systemd-getty-generator usr/bin
+systemd-initctl usr/bin
+systemd-notify usr/bin
+systemd-rc-local-generator usr/bin
+systemd-sysctl usr/bin
+systemd-update-utmp usr/bin
+uselessd var/lib/systemd
+uselessd-hostname-setup usr/bin
+units/*.target var/lib/systemd/system
+units/*.service var/lib/systemd/system
+units/user/*.service var/lib/systemd/user

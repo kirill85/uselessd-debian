@@ -2,8 +2,8 @@ Source: uselessd
 Section: admin
 Priority: required
 Maintainer: Kirill Shkrogalev <kirilshkrogalev@yandex.ru>
-Build-Depends: debhelper (>= 8.0.0), dh-autoreconf, libdbus-1-dev (>=1.4.0), libcap-dev
-Build-Depends-Indep: docbook-xsl, xlltproc, libtool, intltool, automake, gperf
+Build-Depends: debhelper (>= 8.0.0), libdbus-1-dev (>=1.4.0), libcap-dev
+Build-Depends-Indep: docbook-xsl, xsltproc, libtool, intltool, automake, gperf, autotools-dev
 Standards-Version: 3.9.5
 Homepage: http://uselessd.darknedgy.net
 Vcs-Hg: https://bitbucket.org/bcsd/uselessd
@@ -13,14 +13,39 @@ Package: uselessd
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Replaces: systemd
-Recommends: util-linux, libkmod, libpam, cryptsetup, libaudit, libacl, libattr, libselinux, liblzma, tcpwrappers, libgcrypt, libqrencode, libmicrohttpd, libpython2.7
+Recommends: util-linux, libkmod, libpam, cryptsetup, libaudit, libacl, libattr, libselinux, liblzma, tcpwrappers, libgcrypt, libpython2.7
 Breaks: uselessd (<<8)
-Conflicts: systemd
-Suggests: uselessd-logind, 
+Conflicts: systemd, sysvinit
+Suggests: uselessd-logind, uselessd-pam, uselessd-cgtop, uselessd-audit, uselessd-acl, uselessd-cgcl, uselessd-kmod, uselessd-sleep, uselessd-plymouth, uselessd-polkit, uselessd-loopback, uselessd-password-agents, uselessd-remount-fs, uselessd-tmpfiles, uselessd-update-utmp, uselessd-xattr, uselessd-delta, uselessd-randomseed
 Description: Init system and the system daemon's manager.
  Init system and the system daemon's manager.
+
+Package: uselessd-logind
+Conflicts: systemd-logind
+Replaces: systemd-logind
+Depends: uselessd, ${misc:Depends}
+Architecture: any
+Description: Login manager for uselessd.
+
+#Package: uselessd-pam
+#Depends: uselessd, ${misc:Depends}
+#Architecture: any
+#Description: PAM manager provided for uselessd.
+
+Package: uselessd-cgtop
+Depends: uselessd, ${misc:Depends}
+Architecture: i386 amd64 armhf armel
+Description: Show top control groups by their resource usage.
+
+#Package: 
 
 Package: uselessd-doc
 Architecture: all
 Description: documentation for uselessd
- documentation for uselessd
+ Documentation for uselessd
+
+#Package: libuselessd-dev
+#Architecture: all
+#Depends: uselessd
+#Description: Development files for uselessd package
+

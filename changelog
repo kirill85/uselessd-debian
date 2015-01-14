@@ -1,5 +1,11 @@
+uselessd (8-1ubuntu1~ppa1) trusty; urgency=low
+
+  * Initial release.
+
+ -- Kirill Shkrogalev <kirilshkrogalev@yandex.ru>  Fri, 09 Jan 2015 12:25:32 +0300
+
 uselessd (8-1) unstable; urgency=low
 
-  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+  * Initial release.
 
  -- Kirill Shkrogalev <kirilshkrogalev@yandex.ru>  Thu, 25 Dec 2014 18:42:49 +0300

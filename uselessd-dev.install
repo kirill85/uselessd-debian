@@ -1,0 +1,3 @@
+src/core/*.h usr/include/uselessd
+src/shared/*.h usr/include/uselessd
+src/systemd/*.h usr/include/uselessd
