@@ -1,0 +1,2 @@
+.libs/*.a usr/lib
+.libs/*.so* usr/lib

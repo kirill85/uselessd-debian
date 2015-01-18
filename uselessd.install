@@ -1,4 +1,4 @@
-systemctl usr/bin
+.libs/systemctl usr/bin
 systemd-ac-power usr/bin
 systemd-analyze usr/bin
 systemd-getty-generator usr/bin

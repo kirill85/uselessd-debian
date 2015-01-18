@@ -16,4 +16,4 @@ override_dh_auto_configure:
 	--disable-gtk-doc-html --disable-tests 
 
 override_dh_auto_test:
-	
+

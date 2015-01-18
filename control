@@ -1,8 +1,8 @@
 Source: uselessd
 Section: admin
-Priority: required
+Priority: extra
 Maintainer: Kirill Shkrogalev <kirilshkrogalev@yandex.ru>
-Build-Depends: debhelper (>= 8.0.0), libdbus-1-dev (>=1.4.0), libcap-dev
+Build-Depends: debhelper (>= 9.0.0), libdbus-1-dev (>=1.4.0), libcap-dev
 Build-Depends-Indep: docbook-xsl, xsltproc, libtool, intltool, automake, gperf, autotools-dev
 Standards-Version: 3.9.5
 Homepage: http://uselessd.darknedgy.net
@@ -11,8 +11,8 @@ Vcs-Browser: https://bitbucket.org/bcsd/uselessd/src
 
 Package: uselessd
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Replaces: systemd
+Depends: ${shlibs:Depends}, ${misc:Depends}, libuselessd0
+Replaces: systemd, sysvinit, upstart
 Recommends: util-linux, libkmod, libpam, cryptsetup, libaudit, libacl, libattr, libselinux, liblzma, tcpwrappers, libgcrypt, libpython2.7
 Breaks: uselessd (<<8)
 Conflicts: systemd, sysvinit
@@ -37,15 +37,19 @@ Depends: uselessd, ${misc:Depends}
 Architecture: i386 amd64 armhf armel
 Description: Show top control groups by their resource usage.
 
-#Package: 
+Package: libuselessd0
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Architecture: i386 amd64 armhf armel
+Description: Common libraries for uselessd packages.
 
 Package: uselessd-doc
+Depends: ${misc:Depends}
 Architecture: all
 Description: documentation for uselessd
  Documentation for uselessd
 
-#Package: libuselessd-dev
-#Architecture: all
-#Depends: uselessd
-#Description: Development files for uselessd package
+Package: libuselessd-dev
+Architecture: all
+Depends: libuselessd0
+Description: Development files for uselessd package
 
